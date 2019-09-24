@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.entor</groupId>
+  <artifactId>springmvc918</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>springmvc918 Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+ 	<!-- spring web开发所需要的Jar -->
+  	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>5.1.5.RELEASE</version>
+	</dependency>
+	<!-- spring aop切面需要的jar -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-aspects</artifactId>
+	    <version>5.1.5.RELEASE</version>
+	</dependency>
+	<!-- spring连接数据库的Jar -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-orm</artifactId>
+	    <version>5.1.5.RELEASE</version>
+	</dependency>
+	<!-- javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>4.0.1</version>
+	    <scope>provided</scope>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+	<!--返回对象生成json格式 @ResponsBody注解把返回对象生成json格式字符串  -->
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>2.9.8</version>
+	</dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+  	<plugins>
+		<!-- java编译插件， 编译Java代码 -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.2</version><!--$NO-MVN-MAN-VER$ -->
+			<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+				<encoding>UTF-8</encoding><!-- 指定编码格式，否则在DOS下运行mvn compile命令时会出现莫名的错误，因为系统默认使用GBK编码 -->
+			</configuration>
+		</plugin>
+
+		<!-- 资源文件拷贝插件，处理资源文件 -->
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.0.1</version><!--$NO-MVN-MAN-VER$ -->
+			<configuration>
+				<encoding>UTF-8</encoding><!-- 指定编码格式，否则在DOS下运行mvn命令时当发生文件资源copy时将使用系统默认使用GBK编码 -->
+			</configuration>
+		</plugin>
+	</plugins>
+    <finalName>springmvc918</finalName>
+  </build>
+</project>
